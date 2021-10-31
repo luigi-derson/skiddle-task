@@ -6,7 +6,7 @@ function useSearchEvents(query) {
 
   return {
     events: data?.results || [],
-    isLoading: !error && !data,
+    isLoading: !error && !data && query,
     isError: error,
     error: data?.error,
     totalCount: data?.totalcount,

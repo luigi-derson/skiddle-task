@@ -1,13 +1,21 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import Layout from "../components/Layout";
 
 const GlobalStyle = createGlobalStyle`
   *, *::after, *::before {
     box-sizing: border-box;
 
   }
+
+  html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.4;
+  }
+
   body {
     margin: 0;
     padding: 0;
+    color: #163d8d;
   }
 `;
 
@@ -23,7 +31,9 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   );
